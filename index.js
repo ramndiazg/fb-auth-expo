@@ -30,6 +30,17 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: 'black',
     },
+    textInputCode:{
+      paddingTop: 40,
+      paddingBottom: 20,
+      paddingHorizontal: 20,
+      fontSize: 24,
+      borderBottomColor: 'blue',
+      borderBottomWidth: 2,
+      marginBottom: 20,
+      textAlign: 'center',
+      color: 'black',
+  },
     buttonText:{
         textAlign: 'center',
         color: 'black',
@@ -91,6 +102,8 @@ export const Otp = () => {
         keyboardType='phone-pad'
         autoCompleteType='tel'
         style={styles.textInput}
+        blurOnSubmit={true}
+        autoFocus={true}
       />
       <TouchableOpacity style={styles.sendVerification} onPress={sendVerification}>
         <Text style={styles.buttonText}>
@@ -101,7 +114,8 @@ export const Otp = () => {
         placeholder='confirm code'
         onChangeText={setCode}
         keyboardType='number-pad'
-        style={styles.textInput}
+        style={styles.textInputCode}
+        blurOnSubmit={true}
       />
       <TouchableOpacity style={styles.sendCode} onPress={confirmCode}>
         <Text style={styles.buttonText}>
